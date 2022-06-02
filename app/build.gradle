@@ -78,4 +78,6 @@ dependencies {
 
     // ToDo SlidingPaneLayout
     implementation "androidx.slidingpanelayout:slidingpanelayout:1.2.0"
+
+    implementation("androidx.window:window:1.1.0-alpha02")
 }
