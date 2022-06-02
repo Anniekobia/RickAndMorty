@@ -7,8 +7,7 @@ import android.view.View.GONE
 import android.view.View.VISIBLE
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.slidingpanelayout.widget.SlidingPaneLayout
-import com.example.rickandmorty.databinding.FragmentCharacters2Binding
+import com.example.rickandmorty.databinding.FragmentCharactersSlidingBinding
 import com.example.rickandmorty.ui.adapter.CharacterAdapter
 import com.example.rickandmorty.ui.view.MainActivity.Variables.isNetworkConnected
 import com.example.rickandmorty.util.CustomOnBackPressed
@@ -18,7 +17,7 @@ import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
 class CharactersFragment : Fragment() {
 
-    private var _binding: FragmentCharacters2Binding? = null
+    private var _binding: FragmentCharactersSlidingBinding? = null
     private val binding get() = _binding!!
     private val characterViewModel: CharactersViewModel by sharedViewModel()
     private var charactersFetched = false
@@ -30,7 +29,7 @@ class CharactersFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentCharacters2Binding.inflate(inflater, container, false)
+        _binding = FragmentCharactersSlidingBinding.inflate(inflater, container, false)
 
         sortCustomBackNavigation()
         setRecyclerviewAdapter()

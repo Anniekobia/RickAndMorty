@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/charactersFragment"
+        android:title="@string/characters"
+        android:icon="@drawable/ic_characters"/>
+    <item
+        android:id="@+id/locationsFragment"
+        android:title="@string/locations"
+        android:icon="@drawable/ic_location"/>
+
+    <item
+        android:id="@+id/episodesFragment"
+        android:title="@string/episodes"
+        android:icon="@drawable/ic_episodes"/>
+
+</menu>

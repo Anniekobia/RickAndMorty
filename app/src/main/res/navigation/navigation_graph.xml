@@ -8,6 +8,7 @@
     <fragment
         android:id="@+id/charactersFragment"
         android:name="com.example.rickandmorty.ui.view.CharactersFragment"
+        android:label="Rick'n'Morty"
         tools:layout="@layout/fragment_characters">
         <action
             android:id="@+id/action_charactersFragment_to_characterDetailsFragment"
@@ -23,5 +24,17 @@
             android:name="character"
             app:argType="com.example.rickandmorty.data.remote.model.Character" />
     </fragment>
+
+    <fragment
+        android:id="@+id/locationsFragment"
+        android:name="com.example.rickandmorty.ui.view.LocationsFragment"
+        android:label="Rick'n'Morty"
+        tools:layout="@layout/fragment_locations" />
+
+    <fragment
+        android:id="@+id/episodesFragment"
+        android:name="com.example.rickandmorty.ui.view.EpisodesFragment"
+        android:label="Rick'n'Morty"
+        tools:layout="@layout/fragment_episodes" />
 
 </navigation>
