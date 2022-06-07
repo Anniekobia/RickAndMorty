@@ -30,7 +30,7 @@ class CharactersRepositoryImpl(private val apiService: ApiService, private val c
     private suspend fun saveAllCharacters(characters: List<Character>) {
         val response = characterDAO.saveAllCharacters(characters)
         return when {
-            response.isNullOrEmpty() -> {
+            response.isEmpty() -> {
                 saveAllCharacters(characters)
             }
             else -> {

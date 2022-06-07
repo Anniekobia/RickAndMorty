@@ -5,21 +5,28 @@
       <map>
         <entry key="..\:/Users/Annunziata/AndroidStudioProjects/RickAndMorty/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.156" />
         <entry key="..\:/Users/Annunziata/AndroidStudioProjects/RickAndMorty/app/src/main/res/drawable-v24/ic_refresh.xml" value="0.156" />
+        <entry key="..\:/Users/Annunziata/AndroidStudioProjects/RickAndMorty/app/src/main/res/drawable/ic_characters.xml" value="0.111" />
+        <entry key="..\:/Users/Annunziata/AndroidStudioProjects/RickAndMorty/app/src/main/res/drawable/ic_episodes.xml" value="0.111" />
+        <entry key="..\:/Users/Annunziata/AndroidStudioProjects/RickAndMorty/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
+        <entry key="..\:/Users/Annunziata/AndroidStudioProjects/RickAndMorty/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.1" />
+        <entry key="..\:/Users/Annunziata/AndroidStudioProjects/RickAndMorty/app/src/main/res/drawable/ic_location.xml" value="0.111" />
+        <entry key="..\:/Users/Annunziata/AndroidStudioProjects/RickAndMorty/app/src/main/res/drawable/ic_star_logo.xml" value="0.1" />
         <entry key="..\:/Users/Annunziata/AndroidStudioProjects/RickAndMorty/app/src/main/res/drawable/placeholder_image.xml" value="0.121" />
         <entry key="..\:/Users/Annunziata/AndroidStudioProjects/RickAndMorty/app/src/main/res/drawable/species_background.xml" value="0.156" />
         <entry key="..\:/Users/Annunziata/AndroidStudioProjects/RickAndMorty/app/src/main/res/layout-w600dp/activity_main.xml" value="0.21164021164021163" />
         <entry key="..\:/Users/Annunziata/AndroidStudioProjects/RickAndMorty/app/src/main/res/layout-w600dp/fragment_characters_sliding.xml" value="0.21164021164021163" />
         <entry key="..\:/Users/Annunziata/AndroidStudioProjects/RickAndMorty/app/src/main/res/layout/activity_main.xml" value="0.1" />
-        <entry key="..\:/Users/Annunziata/AndroidStudioProjects/RickAndMorty/app/src/main/res/layout/character_item_row.xml" value="0.22826086956521738" />
-        <entry key="..\:/Users/Annunziata/AndroidStudioProjects/RickAndMorty/app/src/main/res/layout/fragment_character_details.xml" value="0.1765625" />
+        <entry key="..\:/Users/Annunziata/AndroidStudioProjects/RickAndMorty/app/src/main/res/layout/character_item_row.xml" value="0.1" />
+        <entry key="..\:/Users/Annunziata/AndroidStudioProjects/RickAndMorty/app/src/main/res/layout/fragment_character_details.xml" value="0.1569767441860465" />
         <entry key="..\:/Users/Annunziata/AndroidStudioProjects/RickAndMorty/app/src/main/res/layout/fragment_character_list.xml" value="0.1" />
-        <entry key="..\:/Users/Annunziata/AndroidStudioProjects/RickAndMorty/app/src/main/res/layout/fragment_characters.xml" value="0.10400000000000001" />
+        <entry key="..\:/Users/Annunziata/AndroidStudioProjects/RickAndMorty/app/src/main/res/layout/fragment_characters.xml" value="0.1" />
         <entry key="..\:/Users/Annunziata/AndroidStudioProjects/RickAndMorty/app/src/main/res/layout/fragment_characters_2.xml" value="0.1" />
-        <entry key="..\:/Users/Annunziata/AndroidStudioProjects/RickAndMorty/app/src/main/res/layout/fragment_characters_sliding.xml" value="0.25" />
+        <entry key="..\:/Users/Annunziata/AndroidStudioProjects/RickAndMorty/app/src/main/res/layout/fragment_characters_sliding.xml" value="0.128" />
         <entry key="..\:/Users/Annunziata/AndroidStudioProjects/RickAndMorty/app/src/main/res/layout/fragment_episodes.xml" value="0.25" />
         <entry key="..\:/Users/Annunziata/AndroidStudioProjects/RickAndMorty/app/src/main/res/layout/fragment_locations.xml" value="0.25" />
         <entry key="..\:/Users/Annunziata/AndroidStudioProjects/RickAndMorty/app/src/main/res/layout/list_pane.xml" value="0.146875" />
         <entry key="..\:/Users/Annunziata/AndroidStudioProjects/RickAndMorty/app/src/main/res/menu/navigation_menu.xml" value="0.25" />
+        <entry key="..\:/Users/Annunziata/AndroidStudioProjects/RickAndMorty/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1" />
       </map>
     </option>
   </component>
@@ -32,7 +39,7 @@
   <component name="VisualizationToolProject">
     <option name="state">
       <ProjectState>
-        <option name="scale" value="0.10400000000000001" />
+        <option name="scale" value="0.128" />
       </ProjectState>
     </option>
   </component>

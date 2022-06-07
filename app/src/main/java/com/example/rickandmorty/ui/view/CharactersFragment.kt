@@ -7,7 +7,8 @@ import android.view.View.GONE
 import android.view.View.VISIBLE
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.example.rickandmorty.databinding.FragmentCharactersSlidingBinding
+import androidx.slidingpanelayout.widget.SlidingPaneLayout.LOCK_MODE_LOCKED
+import com.example.rickandmorty.databinding.FragmentCharactersBinding
 import com.example.rickandmorty.ui.adapter.CharacterAdapter
 import com.example.rickandmorty.ui.view.MainActivity.Variables.isNetworkConnected
 import com.example.rickandmorty.util.CustomOnBackPressed
@@ -16,12 +17,12 @@ import com.example.rickandmorty.viewmodel.CharactersViewModel
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
 class CharactersFragment : Fragment() {
-
-    private var _binding: FragmentCharactersSlidingBinding? = null
+    private var _binding: FragmentCharactersBinding? = null
     private val binding get() = _binding!!
     private val characterViewModel: CharactersViewModel by sharedViewModel()
     private var charactersFetched = false
     private var networkConnected = false
+    private var firstRun = true
     private lateinit var characterAdapter: CharacterAdapter
 
     override fun onCreateView(
@@ -29,7 +30,7 @@ class CharactersFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentCharactersSlidingBinding.inflate(inflater, container, false)
+        _binding = FragmentCharactersBinding.inflate(inflater, container, false)
 
         sortCustomBackNavigation()
         setRecyclerviewAdapter()
@@ -40,25 +41,9 @@ class CharactersFragment : Fragment() {
         return binding.root
     }
 
-    private fun sortCustomBackNavigation() {
-        // ToDO SlidingPaneLayout
-        // Connect the SlidingPaneLayout to the system back button
-        // This callback is only active during the fragment's life cycle.
-        val slidingPaneLayout = binding.slidingPaneLayout
-        requireActivity().onBackPressedDispatcher.addCallback(
-            viewLifecycleOwner,
-            CustomOnBackPressed(slidingPaneLayout)
-        )
-//        slidingPaneLayout.lockMode = SlidingPaneLayout.LOCK_MODE_LOCKED
-    }
-
     private fun setRecyclerviewAdapter() {
         characterAdapter =
             CharacterAdapter() {
-//                val bundle = bundleOf("Character" to it)
-//                findNavController().navigate(R.id.action_charactersFragment_to_characterDetailsFragment, bundle)
-
-                // ToDO SlidingPaneLayout
                 characterViewModel.updateSelectedCharacter(it)
                 binding.slidingPaneLayout.openPane()
             }
@@ -83,8 +68,11 @@ class CharactersFragment : Fragment() {
                 characterAdapter.submitList(it)
                 charactersFetched = true
 
-                // ToDo SlidingPaneLayout
                 characterViewModel.updateSelectedCharacter(it.first())
+                if (firstRun && binding.slidingPaneLayout.isOpen) {
+                    binding.slidingPaneLayout.closePane()
+                    firstRun = false
+                }
             }
         }
         characterViewModel.errorMessage.observe(viewLifecycleOwner) {
@@ -126,8 +114,22 @@ class CharactersFragment : Fragment() {
         }
     }
 
+    private fun sortCustomBackNavigation() {
+        /**
+         * Connect the SlidingPaneLayout to the system back button
+         * This callback is only active during the fragment's life cycle.
+         */
+        val slidingPaneLayout = binding.slidingPaneLayout
+        requireActivity().onBackPressedDispatcher.addCallback(
+            viewLifecycleOwner,
+            CustomOnBackPressed(slidingPaneLayout)
+        )
+        binding.slidingPaneLayout.lockMode = LOCK_MODE_LOCKED
+    }
+
     override fun onDestroyView() {
         super.onDestroyView()
+        firstRun = true
         _binding = null
     }
 }

@@ -17,7 +17,6 @@ class CharactersViewModel(private val characterRepository: CharactersRepository)
         characterRepository.getSavedCharacters()
     }
 
-    // ToDo SlidingPaneLayout
     private val _selectedCharacter = SingleLiveEvent<Character>()
     val selectedCharacter: LiveData<Character> get() = _selectedCharacter
 

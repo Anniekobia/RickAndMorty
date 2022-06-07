@@ -14,7 +14,6 @@ import com.example.rickandmorty.viewmodel.CharactersViewModel
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
 class CharacterDetailsFragment : Fragment() {
-
     private var _binding: FragmentCharacterDetailsBinding? = null
     private val binding get() = _binding!!
     private val characterViewModel: CharactersViewModel by sharedViewModel()
@@ -27,7 +26,6 @@ class CharacterDetailsFragment : Fragment() {
         _binding = FragmentCharacterDetailsBinding.inflate(inflater, container, false)
 
         setUpData()
-
         return binding.root
     }
 
@@ -36,10 +34,6 @@ class CharacterDetailsFragment : Fragment() {
             it?.let {
                 bindDetails(it)
             }
-        }
-        val character = arguments?.getSerializable("Character")
-        if (character != null) {
-            bindDetails(character as Character)
         }
     }
 

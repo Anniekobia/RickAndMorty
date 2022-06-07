@@ -6,7 +6,6 @@ import android.view.View.VISIBLE
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.MutableLiveData
 import androidx.navigation.NavController
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupWithNavController
@@ -16,13 +15,11 @@ import com.example.rickandmorty.databinding.ActivityMainBinding
 import com.example.rickandmorty.util.NetworkMonitor
 
 class MainActivity : AppCompatActivity() {
-
     private lateinit var binding: ActivityMainBinding
     private lateinit var navController: NavController
     object Variables {
         var isNetworkConnected = MutableLiveData(false)
     }
-
     enum class WindowSizeClass { COMPACT, MEDIUM, EXPANDED }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -47,6 +44,9 @@ class MainActivity : AppCompatActivity() {
             )
         )
         binding.toolbar.setupWithNavController(navController, appBarConfiguration)
+        setSupportActionBar(binding.toolbar)
+        binding.bottomNavView.setupWithNavController(navController)
+        binding.navigationRail.setupWithNavController(navController)
     }
 
     private fun computeWindowSizeClasses() {
@@ -64,23 +64,15 @@ class MainActivity : AppCompatActivity() {
             WindowSizeClass.COMPACT -> {
                 binding.navigationRail.visibility = GONE
                 binding.bottomNavView.visibility = VISIBLE
-                binding.bottomNavView.setupWithNavController(navController)
             }
             WindowSizeClass.MEDIUM -> {
                 binding.bottomNavView.visibility = GONE
                 binding.navigationRail.visibility = VISIBLE
-                binding.navigationRail.setupWithNavController(navController)
             }
             WindowSizeClass.EXPANDED -> {
                 binding.bottomNavView.visibility = GONE
                 binding.navigationRail.visibility = VISIBLE
-                binding.navigationRail.setupWithNavController(navController)
             }
         }
-    }
-
-    override fun onSupportNavigateUp(): Boolean {
-        val navController = findNavController(R.id.nav_host_fragment)
-        return navController.navigateUp() || super.onSupportNavigateUp()
     }
 }
