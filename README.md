@@ -8,3 +8,6 @@ Link to session slides: [Building for larger screen slides](https://speakerdeck.
 * SlidingPaneLayout
 * Responsive Navigation - BottomNavigationView & Navigation Rail
 
+## Screenshot (Tablet in Landscape)
+
+
